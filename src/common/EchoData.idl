@@ -1,0 +1,7 @@
+module EchoSounder {
+    struct EchoData {
+        long timestamp;
+        float rawData;
+        float processedData;
+    };
+};

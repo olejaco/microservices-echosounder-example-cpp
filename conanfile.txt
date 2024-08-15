@@ -1,0 +1,11 @@
+[requires]
+fast-dds/2.10.1
+
+[generators]
+cmake_find_package
+cmake_paths
+CMakeDeps
+CMakeToolchain
+
+[options]
+fast-dds:shared=False

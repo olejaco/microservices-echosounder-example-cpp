@@ -1,0 +1,26 @@
+version: '3'
+services:
+  acquisition:
+    build: 
+      context: .
+      dockerfile: src/acquisition_controller/Dockerfile
+    networks:
+      - echo_net
+  
+  processing:
+    build:
+      context: .
+      dockerfile: src/processing_controller/Dockerfile
+    networks:
+      - echo_net
+
+  visualization:
+    build:
+      context: .
+      dockerfile: src/visualization_controller/Dockerfile
+    networks:
+      - echo_net
+
+networks:
+  echo_net:
+    driver: bridge
