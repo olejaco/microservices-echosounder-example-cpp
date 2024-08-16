@@ -18,7 +18,27 @@ These controllers communicate using FastDDS, which provides a publish-subscribe 
 
 The system architecture is as follows:
 
-![Echo-Sounder System Architecture](architecture_diagram.png)
+```mermaid
+graph TD
+    A[Acquisition Controller] -->|Raw Data| B[Processing Controller]
+    B -->|Processed Data| C[Visualization Controller]
+    
+    subgraph Docker Container 1
+    A
+    end
+    
+    subgraph Docker Container 2
+    B
+    end
+    
+    subgraph Docker Container 3
+    C
+    end
+    
+    D[FastDDS] --- A
+    D --- B
+    D --- C
+```
 
 ## Key Components
 
